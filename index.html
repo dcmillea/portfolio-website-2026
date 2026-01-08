@@ -1,167 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Danny Millea – Software Engineer</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  
-  <header class="site-header">
-    <div class="header-container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danny Millea – Software Engineer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-container">
+        <!-- LEFT -->
+        <div class="header-left">
+          <div class="brand">
+            <span class="brand-mark">D</span>
+            <span class="brand-name">Danny Millea</span>
+          </div>
+        </div>
 
-      <!-- LEFT -->
-      <div class="header-left">
-        <div class="brand">
-          <span class="brand-mark">D</span>
-          <span class="brand-name">Danny Millea</span>
+        <!-- CENTER (DESKTOP NAV) -->
+        <nav class="nav nav-desktop" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#resume">Resume</a>
+        </nav>
+
+        <!-- RIGHT -->
+        <div class="header-right">
+          <a href="#contact" class="cta-button cta-desktop">Contact</a>
+
+          <!-- MOBILE MENU BUTTON -->
+          <button
+            class="menu-button"
+            id="menuButton"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            aria-label="Open menu"
+          >
+            <span class="menu-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div class="mobile-menu" id="mobileMenu" hidden>
+          <a href="#about" class="mobile-link">About</a>
+          <a href="#projects" class="mobile-link">Projects</a>
+          <a href="#resume" class="mobile-link">Resume</a>
+          <a href="#contact" class="cta-button mobile-cta">Contact</a>
         </div>
       </div>
+    </header>
 
-      <!-- CENTER (DESKTOP NAV) -->
-      <nav class="nav nav-desktop" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#resume">Resume</a>
-      </nav>
+    <main class="page">
+      <section class="hero" id="top">
+        <div class="hero-panel">
+          <!-- Optional floating badge (like the screenshot's "FREEBIES") -->
+          <div class="hero-badge">AVAILABLE</div>
 
-      <!-- RIGHT -->
-      <div class="header-right">
-        <a href="#contact" class="cta-button cta-desktop">Contact</a>
+          <div class="hero-grid">
+            <!-- LEFT -->
+            <div class="hero-copy">
+              <p class="hero-kicker">Software Engineer</p>
 
-        <!-- MOBILE MENU BUTTON -->
-        <button
-          class="menu-button"
-          id="menuButton"
-          aria-expanded="false"
-          aria-controls="mobileMenu"
-          aria-label="Open menu"
-        >
-          <span class="menu-icon" aria-hidden="true"></span>
-        </button>
-      </div>
+              <h1 class="hero-title">
+                Hello, I’m<br />
+                <span class="hero-name">Danny Millea</span>
+              </h1>
 
-      <!-- MOBILE MENU -->
-      <div class="mobile-menu" id="mobileMenu" hidden>
-        <a href="#about" class="mobile-link">About</a>
-        <a href="#projects" class="mobile-link">Projects</a>
-        <a href="#resume" class="mobile-link">Resume</a>
-        <a href="#contact" class="cta-button mobile-cta">Contact</a>
-      </div>
+              <p class="hero-subtitle">
+                I build secure, polished web products with strong UX. Currently
+                working an internship as a
+                <span class="hero-highlight">full stack software engineer</span
+                >.
+              </p>
 
-    </div>
-  </header>
+              <div class="hero-actions">
+                <a class="hero-primary" href="#contact">Say Hello</a>
+                <a class="hero-secondary" href="#projects">View Projects</a>
+              </div>
 
-  <main class="page">
-    <section class="hero" id="top">
-      <div class="hero-panel">
+              <!-- Optional quick stats strip (matches the vibe in your screenshot) -->
+              <div class="hero-stats">
+                <div class="stat">
+                  <div class="stat-num">9+</div>
+                  <div class="stat-label">Shipped Projects</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-num">3</div>
+                  <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-num">10</div>
+                  <div class="stat-label">toes down</div>
+                </div>
+              </div>
+            </div>
 
-        <!-- Optional floating badge (like the screenshot's "FREEBIES") -->
-        <div class="hero-badge">AVAILABLE</div>
+            <!-- RIGHT -->
+            <div class="hero-visual">
+              <div class="portrait-card">
+                <!-- Replace src with your headshot path -->
+                <img
+                  class="portrait-img"
+                  src="./images/HeroImageHeadshot.png"
+                  alt="Portrait of Danny Millea"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <div class="hero-grid">
-          <!-- LEFT -->
-          <div class="hero-copy">
-            <p class="hero-kicker">Software Engineer</p>
+        <div class="marquee-wrap" aria-label="Tech stack">
+          <div class="marquee" id="techMarquee">
+            <div class="marquee-inner" id="techMarqueeInner">
+              <div class="marquee-set" id="techMarqueeSet">
+                <span class="pill">HTML</span>
+                <span class="pill">CSS</span>
+                <span class="pill">JavaScript</span>
+                <span class="pill pill-gold">TypeScript</span>
+                <span class="pill">Python</span>
+                <span class="pill">C#</span>
+                <span class="pill">C++</span>
+                <span class="pill">PHP</span>
+                <span class="pill pill-gold">React</span>
+                <span class="pill">Redux</span>
+                <span class="pill pill-gold">Next.js</span>
+                <span class="pill">Node.js</span>
+                <span class="pill">Express.js</span>
+                <span class="pill pill-gold">Tailwind</span>
+                <span class="pill">Git</span>
+                <span class="pill">GitHub</span>
+                <span class="pill">NPM</span>
+                <span class="pill">Vercel</span>
+                <span class="pill pill-gold">PostgreSQL</span>
+                <span class="pill">Prisma</span>
+                <span class="pill">Supabase</span>
+                <span class="pill">Firebase</span>
+                <span class="pill">Zod</span>
+                <span class="pill pill-gold">REST APIs</span>
+                <span class="pill">Docker</span>
+              </div>
 
-            <h1 class="hero-title">
-              Hello, I’m<br />
-              <span class="hero-name">Danny Millea</span>
-            </h1>
+              <!-- This gets auto-cloned by JS; leave empty here -->
+              <div
+                class="marquee-set"
+                id="techMarqueeClone"
+                aria-hidden="true"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <p class="hero-subtitle">
-              I build secure, polished web products with strong UX.
-              Currently working an internship as a <span class="hero-highlight">full stack software engineer</span>.
+      <section class="projects-section" id="projects">
+        <div class="projects-header">
+          <p class="section-kicker">FEATURED WORK</p>
+          <h2 class="section-title">Projects I’ve Shipped</h2>
+          <p class="section-subtitle">
+            Real products focused on users, performance, and production systems.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- FEATURED PROJECT -->
+          <a href="#" class="project-card featured-project">
+            <div class="project-image">
+              <img src="readmystudent.png" alt="ReadMyStudent screenshot" />
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">ReadMyStudent</h3>
+
+              <p class="project-desc">
+                Secure platform for managing confidential academic
+                recommendations at scale.
+              </p>
+
+              <p class="project-tech">
+                Next.js · TypeScript · Prisma · PostgreSQL · Auth · Encryption
+              </p>
+
+              <span class="project-link">View website →</span>
+            </div>
+          </a>
+
+          <!-- PROJECT 2 -->
+          <a
+            href="https://dcmillea-broodl.netlify.app/"
+            class="project-card"
+            target="_blank"
+          >
+            <div class="project-image">
+              <img src="./images/Broodl.png" alt="Project screenshot" />
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Broodl</h3>
+
+              <p class="project-desc">
+                A full stack mood tracking web app. Track your mood daily with
+                built in authentication so you can see your mood across days,
+                months, and years!
+              </p>
+
+              <p class="project-tech">Next.js · Firebase · JavaScript</p>
+
+              <span class="project-link">View website →</span>
+            </div>
+          </a>
+
+          <!-- PROJECT 3 -->
+          <a href="https://dcmillea-caffiend.netlify.app/" class="project-card">
+            <div class="project-image">
+              <img src="./images/Caffiend.png" alt="Project screenshot" />
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Caffiend</h3>
+
+              <p class="project-desc">
+                A full stack caffeine metric tracking app. Track your caffeine
+                levels, measuring your monthly coffee cost, and get your
+                addiction in check!
+              </p>
+
+              <p class="project-tech">React · Tailwind · Firebase</p>
+
+              <span class="project-link">View website →</span>
+            </div>
+          </a>
+
+          <!-- Project 4 -->
+          <a href="https://dcmillea-pokedex.netlify.app/" class="project-card">
+            <div class="project-image">
+              <img src="./images/Pokemon.png" alt="Project screenshot" />
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Pokédex</h3>
+
+              <p class="project-desc">
+                A simple frontend react project that uses the pokemon api. You
+                view all the original pokemon with their abilites, attacks, and
+                much more!
+              </p>
+
+              <p class="project-tech">React · Tailwind · JavaScript</p>
+
+              <span class="project-link">View website →</span>
+            </div>
+          </a>
+
+          <!-- Project 5 -->
+          <a href="https://dcmillea-caffiend.netlify.app/" class="project-card">
+            <div class="project-image">
+              <img src="./images/VideoGame.png" alt="Project screenshot" />
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">300: Blood & Bronze</h3>
+
+              <p class="project-desc">
+                A 2D video game built in the Unity Game Engine. Fight against
+                the onslaught of skeletons, collect the mage's staff, and defeat
+                the skeleton king!
+              </p>
+
+              <p class="project-tech">
+                Unity · C# · Adobe Photoshop · FL Studio
+              </p>
+
+              <span class="project-link">View website →</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="about-strip" id="about">
+        <div class="about-panel">
+          <!-- LEFT: About copy -->
+          <div class="about-left">
+            <p class="section-kicker">ABOUT</p>
+            <h2 class="section-title">Here's a bit about me</h2>
+
+            <p class="about-text">
+              Although I specialize in frontend development, I have been leaning
+              into full-stack projects more recenetly. I focus on security,
+              clarity, and UX polish. I like shipping quickly, then tightening
+              systems through iteration and real user feedback. I thrive in a
+              fast paced, team driven enviornment, and love unique challenges.
             </p>
 
-            <div class="hero-actions">
-              <a class="hero-primary" href="#contact">Say Hello</a>
-              <a class="hero-secondary" href="#projects">View Projects</a>
-            </div>
-
-            <!-- Optional quick stats strip (matches the vibe in your screenshot) -->
-            <div class="hero-stats">
-              <div class="stat">
-                <div class="stat-num">9+</div>
-                <div class="stat-label">Shipped Projects</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num">3</div>
-                <div class="stat-label">Years of Experience</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num">10</div>
-                <div class="stat-label">toes down</div>
-              </div>
+            <div class="about-actions">
+              <a class="about-link" href="#projects">Explore projects →</a>
+              <a class="about-link muted" href="#contact">Get in touch →</a>
             </div>
           </div>
 
-          <!-- RIGHT -->
-          <div class="hero-visual">
-            <div class="portrait-card">
-              <!-- Replace src with your headshot path -->
-              <img
-                class="portrait-img"
-                src="./images/HeroImageHeadshot.png"
-                alt="Portrait of Danny Millea"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+          <!-- RIGHT: Principles + Quick Facts -->
+          <div class="about-right">
+            <div class="info-grid">
+              <!-- Principles -->
 
-      <div class="marquee-wrap" aria-label="Tech stack">
-        <div class="marquee" id="techMarquee">
-          <div class="marquee-inner" id="techMarqueeInner">
-            <div class="marquee-set" id="techMarqueeSet">
-              <span class="pill">HTML</span>
-              <span class="pill">CSS</span>
-              <span class="pill">JavaScript</span>
-              <span class="pill pill-gold">TypeScript</span>
-              <span class="pill">Python</span>
-              <span class="pill">C#</span>
-              <span class="pill">C++</span>
-              <span class="pill">PHP</span>
-              <span class="pill pill-gold">React</span>
-              <span class="pill">Redux</span>
-              <span class="pill pill-gold">Next.js</span>
-              <span class="pill">Node.js</span>
-              <span class="pill">Express.js</span>
-              <span class="pill pill-gold">Tailwind</span>
-              <span class="pill">Git</span>
-              <span class="pill">GitHub</span>
-              <span class="pill">NPM</span>
-              <span class="pill">Vercel</span>
-              <span class="pill pill-gold">PostgreSQL</span>
-              <span class="pill">Prisma</span>
-              <span class="pill">Supabase</span>
-              <span class="pill">Firebase</span>
-              <span class="pill">Zod</span>
-              <span class="pill pill-gold">REST APIs</span>
-              <span class="pill">Docker</span>
-            </div>
+              <div class="info-card">
+                <h3 class="info-title">Hobbies</h3>
+                <p class="info-desc">
+                  Boxing, entrepreneurship, video game development, and watching
+                  movies.
+                </p>
+              </div>
 
-            <!-- This gets auto-cloned by JS; leave empty here -->
-            <div class="marquee-set" id="techMarqueeClone" aria-hidden="true"></div>
+              <div class="info-card">
+                <h3 class="info-title">Favorite Movies</h3>
+                <p class="info-desc">
+                  Avatar, Dead Man's Chest, Kingdom of Heaven, and Revenge of
+                  the Sith
+                </p>
+              </div>
+
+              <!-- Quick Facts -->
+              <div class="info-card">
+                <h3 class="info-title">Favorite Video Games</h3>
+                <p class="info-desc">
+                  Halo 2, Rocket League, and Call of Duty: Black Ops 3
+                </p>
+              </div>
+
+              <div class="info-card">
+                <h3 class="info-title">Quote of the Day</h3>
+                <p class="info-desc">
+                  <span style="font-style: italic"
+                    >"Justice is merely the construct of the current power
+                    base"</span
+                  >
+                  - Darth Maul
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
+
+      <section class="cta-section" id="contact">
+        <div class="cta-panel">
+          <div class="cta-left">
+            <p class="cta-kicker">LET’S TALK</p>
+
+            <h2 class="cta-title">
+              Ready to ship.<br />
+              Let’s build something great.
+            </h2>
+
+            <p class="cta-subtitle">
+              I’m open to software engineering roles. If you’re hiring, I’d love
+              to connect.
+            </p>
+
+            <div class="cta-actions">
+              <a class="cta-primary" href="mailto:dcmillea@gmail.com"
+                >Email me</a
+              >
+              <a
+                class="cta-secondary"
+                href="./resources/Daniel Millea - Frontend Software Engineer.pdf"
+                target="_blank"
+                rel="noopener"
+                >View resume</a
+              >
+              <a
+                class="cta-tertiary"
+                href="https://github.com/dcmillea"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+              <a
+                class="cta-tertiary"
+                href="in/daniel-millea-3666b138a"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn</a
+              >
+            </div>
+
+            <p class="cta-footnote">
+              Prefer a quick intro? Send 2–3 lines about the role and timeline.
+            </p>
+          </div>
+
+          <div class="cta-right" aria-hidden="true">
+            <div class="cta-badge">
+              <div class="cta-badge-top">Available</div>
+              <div class="cta-badge-bottom">For SWE roles</div>
+            </div>
+
+            <div class="cta-lines"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech stack / Proof -->
+      <section class="stack-section" id="stack">
+        <div class="stack-header">
+          <p class="section-kicker">TECH STACK</p>
+          <h2 class="section-title">Tools I build with</h2>
+          <p class="section-subtitle">
+            Production-focused technologies I use to ship reliable software.
+          </p>
+        </div>
+
+        <div class="stack-grid">
+          <div class="stack-col">
+            <h3>Frontend</h3>
+            <ul>
+              <li>React</li>
+              <li>Next.js</li>
+              <li>TypeScript</li>
+              <li>Tailwind CSS</li>
+            </ul>
+          </div>
+
+          <div class="stack-col">
+            <h3>Backend</h3>
+            <ul>
+              <li>Node.js</li>
+              <li>Next.js</li>
+              <li>Express.js</li>
+              <li>REST APIs</li>
+            </ul>
+          </div>
+
+          <div class="stack-col">
+            <h3>Data & Infra</h3>
+            <ul>
+              <li>PostgreSQL</li>
+              <li>Prisma</li>
+              <li>Supabase</li>
+              <li>Firebase</li>
+            </ul>
+          </div>
+
+          <div class="stack-col">
+            <h3>Tooling</h3>
+            <ul>
+              <li>Git & GitHub</li>
+              <li>Vercel</li>
+              <li>Linux</li>
+              <li>npm</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="footer-name">Danny Millea</p>
+
+        <nav class="footer-links">
+          <a href="#projects">Projects</a>
+          <a href="mailto:dcmillea@gmail.com">Email me</a>
+          <a
+            href="./resources/Daniel Millea - Frontend Software Engineer.pdf"
+            target="_blank"
+            rel="noopener"
+            >Resume</a
+          >
+          <a href="https://github.com/dcmillea" target="_blank" rel="noopener"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/YOUR_HANDLE"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+        </nav>
+
+        <p class="footer-copy">
+          Copyright © <span id="footerYear">2026</span> Daniel Millea. All
+          rights reserved.
+        </p>
       </div>
+    </footer>
 
-
-
-    </section>
-
-    <!-- next sections will go here -->
-    <section id="projects"></section>
-    <section id="about"></section>
-    <section id="resume"></section>
-    <section id="contact"></section>
-  </main>
-
-
-  <script src="menu.js"></script>
-  <script src="marquee.js"></script>
-
-</body>
+    <script src="menu.js"></script>
+    <script src="marquee.js"></script>
+  </body>
 </html>

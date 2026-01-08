@@ -33,24 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Start once layout/fonts are stable
-  const ready = document.fonts?.ready ? document.fonts.ready : Promise.resolve();
+  const ready = document.fonts?.ready
+    ? document.fonts.ready
+    : Promise.resolve();
   ready.then(() => {
     marquee.scrollLeft = 0;
     last = performance.now();
     rafId = requestAnimationFrame(step);
-  });
-
-  // Pause on hover (premium feel)
-  marquee.addEventListener("mouseenter", () => {
-    if (rafId) cancelAnimationFrame(rafId);
-    rafId = null;
-  });
-
-  marquee.addEventListener("mouseleave", () => {
-    if (!rafId) {
-      last = performance.now();
-      rafId = requestAnimationFrame(step);
-    }
   });
 
   // Re-sync on resize (prevents odd wrap after viewport changes)
