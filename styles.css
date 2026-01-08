@@ -1,0 +1,622 @@
+/* =====================================================
+   Base Reset + Global
+   ===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: #f6f7f5;
+  color: #111;
+  line-height: 1.5;
+}
+
+/* =====================================================
+   Header Wrapper
+   ===================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 20px 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.75)
+  );
+
+  backdrop-filter: blur(12px);
+}
+
+/* =====================================================
+   Header Container (GRID CENTER)
+   ===================================================== */
+
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 22px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  background: #ffffff;
+  border-radius: 16px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.06),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+/* =====================================================
+   Header Sections
+   ===================================================== */
+
+.header-left {
+  justify-self: start;
+}
+
+.header-right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =====================================================
+   Brand
+   ===================================================== */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #f7d774,
+    #f3b72f,
+    #d99a00
+  );
+
+  color: #3a2a00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.brand-name {
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* =====================================================
+   Navigation
+   ===================================================== */
+
+.nav {
+  justify-self: center;
+  display: flex;
+  gap: 28px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #444;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 1px;
+  background: #1f3d2b;
+  transition: width 0.25s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* =====================================================
+   CTA Button
+   ===================================================== */
+
+.cta-button {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: #3a2a00;
+
+  background: linear-gradient(
+    to right,
+    #f7d774,
+    #f3b72f,
+    #d99a00
+  );
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 6px 18px rgba(245, 197, 66, 0.35);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 10px 28px rgba(245, 197, 66, 0.45);
+}
+
+/* =====================================================
+   Hamburger Button
+   ===================================================== */
+
+.menu-button {
+  display: none;
+  border: 0;
+  background: transparent;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+}
+
+.menu-icon {
+  display: block;
+  width: 22px;
+  height: 14px;
+  position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: #2b2b2b;
+  border-radius: 2px;
+  transition:
+    transform 0.2s ease,
+    top 0.2s ease;
+}
+
+.menu-icon::before { top: 0; }
+.menu-icon::after  { top: 12px; }
+
+.menu-button.is-open .menu-icon::before {
+  top: 6px;
+  transform: rotate(45deg);
+}
+
+.menu-button.is-open .menu-icon::after {
+  top: 6px;
+  transform: rotate(-45deg);
+}
+
+/* =====================================================
+   Mobile Menu Panel
+   ===================================================== */
+
+.mobile-menu {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 14px 34px rgba(0,0,0,0.08),
+    inset 0 0 0 1px rgba(0,0,0,0.05);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-menu[hidden] {
+  display: none !important;
+}
+
+.mobile-link {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.mobile-link:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+.mobile-cta {
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+/* =====================================================
+   Page Layout
+   ===================================================== */
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 24px 80px;
+}
+
+/* =====================================================
+   Hero (match screenshot vibe)
+   ===================================================== */
+
+.hero {
+  padding-top: 28px;
+}
+
+.hero-panel {
+  position: relative;
+  border-radius: 24px;
+  padding: 80px 56px 28px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(900px 380px at 25% 20%, rgba(0, 0, 0, 0.04), transparent 60%),
+    radial-gradient(900px 380px at 85% 35%, rgba(0, 0, 0, 0.03), transparent 65%),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.86));
+
+  box-shadow:
+    0 28px 60px rgba(0, 0, 0, 0.10),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Floating badge (gold, partially clipped) */
+.hero-badge {
+  position: absolute;
+  left: -40px;          /* pushes it outside the panel */
+  top: 20px;
+
+  padding: 12px 20px 12px 60px;
+  border-radius: 14px;
+
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+
+  color: #3a2a00;
+  background: linear-gradient(
+    to right,
+    #f7d774,
+    #f3b72f,
+    #d99a00
+  );
+
+  box-shadow:
+    0 8px 40px rgba(245, 197, 66, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+
+  text-transform: uppercase;
+}
+
+/* Two-column layout */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-copy {
+  max-width: 560px;
+}
+
+.hero-kicker {
+  margin: 0 0 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: rgba(17, 17, 17, 0.65);
+}
+
+.hero-title {
+  margin: 0 0 14px;
+  font-size: 3.15rem;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #121826;
+}
+
+.hero-name {
+  color: #121826;
+}
+
+.hero-subtitle {
+  margin: 0 0 22px;
+  font-size: 1.05rem;
+  color: rgba(17, 17, 17, 0.68);
+  max-width: 50ch;
+}
+
+.hero-highlight {
+  font-weight: 700;
+  color: #1f3d2b; /* deep green accent */
+}
+
+/* Buttons */
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.hero-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+
+  color: #3a2a00;
+  background: linear-gradient(to right, #f7d774, #f3b72f, #d99a00);
+  box-shadow: 0 10px 26px rgba(245, 197, 66, 0.30);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(245, 197, 66, 0.40);
+}
+
+.hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+
+  color: rgba(17, 17, 17, 0.75);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+/* Right-side portrait card */
+.hero-visual {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.portrait-card {
+  width: min(420px, 100%);
+  aspect-ratio: 4 / 4.2;
+  border-radius: 22px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 22px 46px rgba(0, 0, 0, 0.10),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Stats strip */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+
+  padding: 14px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.stat {
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.70);
+}
+
+.stat-num {
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: #121826;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  margin-top: 2px;
+  font-size: 0.85rem;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+/* =====================================================
+   Responsive hero
+   ===================================================== */
+
+@media (max-width: 900px) {
+  .hero-panel {
+    padding: 40px 26px 22px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .hero-visual {
+    justify-content: flex-start;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-badge {
+    display: none; /* optional: keep it clean on small screens */
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   Responsive
+   ===================================================== */
+
+@media (max-width: 768px) {
+  .nav-desktop,
+  .cta-desktop {
+    display: none;
+  }
+
+  .menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-name {
+    display: none;
+  }
+}
+
+/* =====================================================
+   Scroll-based Marquee (NO overlap, NO drift)
+   ===================================================== */
+
+.marquee-wrap {
+  margin-top: 18px;
+  border-radius: 18px;
+  padding: 18px 0;
+
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Edge fades */
+.marquee-wrap::before,
+.marquee-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 90px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.marquee-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(246, 247, 245, 1), rgba(246, 247, 245, 0));
+}
+
+.marquee-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(246, 247, 245, 1), rgba(246, 247, 245, 0));
+}
+
+.marquee {
+  overflow: hidden;
+  padding: 0 22px 6px;
+  /* Hide scrollbar everywhere */
+  scrollbar-width: none;
+}
+.marquee::-webkit-scrollbar { display: none; }
+
+.marquee-inner {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-set {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 12px; /* ensures spacing between end and restart */
+}
+
+/* Pills (smooth while moving: borders > shadows) */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1;
+  white-space: nowrap;
+
+  color: rgba(17, 17, 17, 0.78);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.pill-gold {
+  color: #3a2a00;
+  background: linear-gradient(to right, #f7d774, #f3b72f, #d99a00);
+  border: 1px solid rgba(245, 197, 66, 0.55);
+}
